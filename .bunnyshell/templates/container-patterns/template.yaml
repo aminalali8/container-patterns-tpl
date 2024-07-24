@@ -8,9 +8,9 @@ categories:
     - bunnyshelldesignpatterns
 stack:
   packages: 
-    - name: Typescript
+    - name: "Typescript"
       version: 4.4.3
-    - name: Postgres
+    - name: "Postgres"
       version: 16.3
 discoverable: true
 
