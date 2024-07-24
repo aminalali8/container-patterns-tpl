@@ -118,7 +118,9 @@ components:
     name: init-db-seed
     dockerCompose:
       image: postgres:latest
-      command: ["/bin/sh", "-c", 'PGPASSWORD="{{components.db.vars.POSTGRES_PASSWORD}}" psql -h db -U postgres -f /tmp/seed.sql']
+      environment:
+        PGPASSWORD: "{{components.db.vars.POSTGRES_PASSWORD}}"
+      command: ["/bin/sh", "-c", 'psql -h db -U postgres -f /tmp/seed.sql']
     files: 
       /tmp/seed.sql: |
         CREATE DATABASE bunny_books;
