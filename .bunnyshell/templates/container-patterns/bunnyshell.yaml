@@ -86,6 +86,16 @@ components:
       - hostname: "backend-{{ env.base_domain }}"
         path: /
         servicePort: 3080
+    pod:
+      init_containers:
+        - from: init-db-seed
+          name: init-db-seed
+          shared_paths:
+            - path: /tmp
+              target:
+                path: /tmp
+                container: "@parent"
+              initial_contents: "@target"
   - kind: Database
     name: db
     dockerCompose:
@@ -102,16 +112,6 @@ components:
       - name: db-data
         mount: /var/lib/postgresql/data
         subPath: ""
-    pod:
-      init_containers:
-        - from: init-db-seed
-          name: init-db-seed
-          shared_paths:
-            - path: /tmp
-              target:
-                path: /tmp
-                container: "@parent"
-              initial_contents: "@target"
   - kind: InitContainer
     name: init-db-seed
     dockerCompose:

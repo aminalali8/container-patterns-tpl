@@ -2,10 +2,10 @@
 name: container-patterns template
 description: The `container-patterns-tpl` template demonstrates how to utilize init and sidecar containers in Bunnyshell. It provides practical examples to illustrate their setup and interaction within a containerized environment.
 tags:
-    - bunnyshell
+  - bunnyshell
 icons: [ 'typescript', 'postgres' ]
 categories:
-    - bunnyshelldesignpatterns
+  - bunnyshelldesignpatterns
 stack:
   packages: 
     - name: "Typescript"
