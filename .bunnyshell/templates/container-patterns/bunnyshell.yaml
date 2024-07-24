@@ -96,6 +96,8 @@ components:
                 path: /tmp
                 container: "@parent"
               initial_contents: "@target"
+    dependsOn: 
+      - db
   - kind: Database
     name: db
     dockerCompose:
