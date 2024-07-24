@@ -9,8 +9,8 @@ categories:
 stack:
   packages: 
     - name: "Typescript"
-      version: 4.4.3
+      version: "4.4.3"
     - name: "Postgres"
-      version: 16.3
+      version: "16.3"
 discoverable: true
 
